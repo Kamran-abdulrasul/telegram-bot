@@ -1,0 +1,21 @@
+server:
+  port: 9095
+
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/tgbdb
+    username: postgres
+    password: qwerty
+
+
+telegram:
+  bot:
+    token: "6814580610:AAF1Dq4k976gKgh1ATGizmRZm_PsRNk2WDY"
+    webhook:
+      url: "https://t.me/kamran_helper_bot"
+    name: "kamran_helper_bot"
+
+
+
