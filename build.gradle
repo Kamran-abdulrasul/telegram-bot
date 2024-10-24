@@ -36,7 +36,8 @@ dependencies {
 
     compileOnly 'org.projectlombok:lombok'
 
-    runtimeOnly 'org.postgresql:postgresql'
+    //runtimeOnly 'org.postgresql:
+    runtimeOnly 'com.h2database:h2'
 
     implementation 'com.github.pengrad:java-telegram-bot-api:7.0.1'
     annotationProcessor 'org.projectlombok:lombok'

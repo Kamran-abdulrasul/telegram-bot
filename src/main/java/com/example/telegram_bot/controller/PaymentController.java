@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.List;
@@ -78,11 +80,19 @@ public class PaymentController {
             cell.setCellValue(payments.getId());
        }
 
-            try (OutputStream outputStream = response.getOutputStream()) {
-                workbook.write(outputStream);
+//            try (OutputStream outputStream = response.getOutputStream()) {
+//                workbook.write(outputStream);
+//
+//                workbook.close();
+//            }
 
-                workbook.close();
-            }
+        File currDir = new File(".");
+        String path = currDir.getAbsolutePath();
+        String fileLocation = path.substring(0, path.length() - 1) + "temp.xlsx";
+
+        FileOutputStream outputStream = new FileOutputStream(fileLocation);
+        workbook.write(outputStream);
+        workbook.close();
 
 
         }
